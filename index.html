@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <title>Rotate 2</title>
     <style>
         *{
@@ -13,7 +14,7 @@
             text-decoration: none;
         }
         body{
-            width: 100%;
+            width: 100vw;
             height: 100vh;
             background-color: #e0e0e0a2;
         }
@@ -34,6 +35,8 @@
         }
         /* ++++++++++++++ */
         .s1{
+            width: 100%;
+            height: 100%;
             display: flex;
             border-right: 3px dotted #000;
             background-color: #ececec;
@@ -41,10 +44,12 @@
         }
         /* +++++++++++++++ */
         .a{
-            position: fixed;
-            width: 50%;
-            height: 50%;
+            position: relative;
+            width: 100%;
+            height: 60%;
             display: flex;
+            font-family: 'Lora', serif;
+            font-size: 1.3em;
             flex-direction: column;
             justify-content: space-between;
         }
@@ -55,18 +60,25 @@
             justify-content: center;
             align-items: center;
         }
-        .a .row2{
-            justify-content: space-between;
+        .a .row1{
+            font-size: 1.5em;
         }
+        .a .row2{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            }
         .a .row2 span{
             margin: auto;
+        }
+        .a .row2 #L{
+            justify-content:flex-start;
         }
         /* +++++++++++++++ */
         .b{
             overflow: hidden;
             width: 50%;
             height: 100%;
-            position: fixed;
+            position: absolute;
         }
         .cover{
             width: 100%;
@@ -87,14 +99,14 @@
             transition: 1s ease-in-out;
         }
 /* ++++++++++++++++++++++++++++++++++++++++++++++ */
-        #coverUp{
+        /* #coverUp{
             position: absolute;
-            /* display: flex; */
+            display: flex;
             width: 10000%;
             height: 100%;
             left: -100%;
-        }
-                                #coverUp div{
+        } */
+                                /* #coverUp div{
                                     position: relative;
                                     top: 50%;
                                     left: 0;
@@ -102,7 +114,7 @@
                                     height: 100%;
                                     transform: translateY(-100%);
                                     background-color: #ebebeb;
-                                }
+                                } */
         #coverL{
             position: absolute;
             width: 100%;
@@ -114,23 +126,23 @@
                                         top: 50%;
                                         left: 50%;
                                         width: 100%;
-                                        height: 100%;
+                                        height: 1000%;
                                         background-color: #ebebeb;
-                                        transform: scaleX(10);
+                                        transform: scaleX(5);
                                     }
-                                    #coverR{
+        #coverR{
             position: absolute;
             display: flex;
             width: 100%;
             height: 100%;
             transform: rotate(55deg);
         }
-        #coverR div{
+                                        #coverR div{
                                         position: relative;
-                                        top: -50%;
+                                        top: -300%;
                                         left: 50%;
                                         width: 100%;
-                                        height: 100%;
+                                        height: 350%;
                                         background-color: #ebebeb;
                                         transform: scaleX(10);
                                     }
@@ -193,7 +205,7 @@
             justify-content: center;   
         }
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-/* @media (orientation: portrait) {
+@media (orientation: portrait) {
             .screen{
                 flex-direction: column;
             }
@@ -203,7 +215,17 @@
                 border-bottom: 5px dotted #000;
                 overflow: hidden;
             }
-        } */
+            .a{
+                width: 100%;
+                height: 75%;
+            }
+            .b{
+                overflow: hidden;
+                width: 100%;
+                height: 50%;
+                position: absolute;
+            }
+        }
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
         </style>
 </head>
@@ -211,9 +233,9 @@
     <div class="screen">
         <section class="s1">
             <div class="a" id="textbox">
-                <div class="row1"><span>3</span></div>
-                <div class="row2"><span>4</span><span></span><span>2</span></div>
-                <div class="row3"><span>1</span></div>
+                <div class="row1"><span><i class="fab fa-instagram"></i></span></div>
+                <div class="row2"><span id="L">Developments</span><span id="R">Artworks</span></div>
+                <div class="row3"><span>Music</span></div>
             </div>
             <div class="b">
                 <div class="shadow" id="shadow">
@@ -224,7 +246,7 @@
                 <div class="cover" id="cover">
                     <div id="coverL"><div></div></div>
                     <div id="coverR"><div></div></div>
-                    <div id="coverUp"><div></div></div>
+                    <!-- <div id="coverUp"><div></div></div> -->
                 </div>
             </div>
         </section>
