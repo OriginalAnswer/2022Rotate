@@ -5,14 +5,108 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+        }
+        .screen{
+            width: 100%;
+            height: 100%;
+        }
+        section{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-items: center;
+            }
+        #section1{
+            display: flex;
+            justify-content: center;
+        }
+        
+        #round1{
+            background-color: rgba(255, 255, 255, 0);
+            position: absolute;
+            /* display: flex; */
+            width: 100%;
+            height: 1000%;
+            border-radius: 50%;
+            transform: rotate(125deg);
+        }
+        #line1{
+            position: relative;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.407);
+        }
+        #round2{
+            background-color: rgba(255, 255, 255, 0);
+            position: absolute;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transform: rotate(55deg);
+        }
+        #line2{
+            position: relative;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translateY(-100%);
+            background-color: rgba(0, 0, 0, 0.407);
+        }
+        #round3{
+            background-color: rgba(255, 255, 255, 0);
+            position: absolute;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        #line3{
+            position: relative;
+            top: 50%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            transform: translateY(-100%);
+            background-color: rgba(0, 0, 0, 0.407);
+        }
+    </style>
 </head>
 <body>
     <div class="screen">
-        <div class="container">
-            <div id="box1"></div>
-            <div id="box2"></div>
-            <div id="box3"></div>
-        </div>
+        <section id="section1">
+            <div id="round1">
+                <div id="line1"></div>
+            </div>
+            <div id="round2">
+                <div id="line2"></div>
+            </div>
+            <div id="round3">
+                <div id="line3"></div>
+            </div>
+        </section>
     </div>
+    <!-- 
+        <i class="fas fa-caret-up"></i>
+        <i class="fas fa-caret-down"></i>
+        <i class="fas fa-caret-left"></i>
+        <i class="fas fa-caret-right"></i>
+    -->
+    <script src="https://kit.fontawesome.com/e4704dcbbd.js" crossorigin="anonymous"></script>
 </body>
 </html>
