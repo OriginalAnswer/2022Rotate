@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Jua&display=swap" rel="stylesheet">
     <title>Rotate 2</title>
     <style>
         *{
@@ -41,6 +41,8 @@
             border-right: 3px dotted #000;
             background-color: #ececec;
             overflow: hidden;
+            border-bottom:1px solid #a5a5a55b;
+            box-shadow: inset 0 0 50px  #bebebe;
         }
         /* +++++++++++++++ */
         .a{
@@ -48,8 +50,9 @@
             width: 100%;
             height: 60%;
             display: flex;
-            font-family: 'Lora', serif;
-            font-size: 1.3em;
+            font-family: 'Jua', serif;
+            font-size: 1.5em;
+            color: rgb(0, 0, 0);
             flex-direction: column;
             justify-content: space-between;
         }
@@ -181,11 +184,14 @@
             transform: translateY(-100%);
             box-shadow:  0 0 40px 0 #bebebe;
         }
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+        /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
         .s2{
+            background-color: #e0e0e0;
             flex-direction: column;
             justify-content: center;
             font-size: 2em;
+            border-top:1px solid #a5a5a571;
+            box-shadow: inset 0 20px 100px 0 #bebebe;
         }
         #ctrl{
             margin: auto;
@@ -212,7 +218,7 @@
             .s1{
                 display: flex;
                 border-right: none;
-                border-bottom: 5px dotted #000;
+                /* border-bottom: 5px dotted #000; */
                 overflow: hidden;
             }
             .a{
