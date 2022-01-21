@@ -55,8 +55,11 @@
             justify-content: center;
             align-items: center;
         }
-        .a>.row2{
+        .a .row2{
             justify-content: space-between;
+        }
+        .a .row2 span{
+            margin: auto;
         }
         /* +++++++++++++++ */
         .b{
@@ -71,7 +74,8 @@
             position: absolute;
             top: 0;
             left: 0;
-            transform: rotate(-90deg);
+            transform: rotate(0deg);
+            transition: 1s ease-in-out;
         }
         .shadow{
             width: 100%;
@@ -79,7 +83,8 @@
             position: absolute;
             top: 0;
             left: 0;
-            transform: rotate(-90deg);
+            transform: rotate(0deg);
+            transition: 1s ease-in-out;
         }
 /* ++++++++++++++++++++++++++++++++++++++++++++++ */
         #coverUp{
@@ -206,17 +211,17 @@
     <div class="screen">
         <section class="s1">
             <div class="a" id="textbox">
-                <div class="row1"><span>1</span></div>
-                <div class="row2"><span>2</span><span></span><span>3</span></div>
-                <div class="row3"><span>4</span></div>
+                <div class="row1"><span>3</span></div>
+                <div class="row2"><span>4</span><span></span><span>2</span></div>
+                <div class="row3"><span>1</span></div>
             </div>
             <div class="b">
-                <div class="shadow">
+                <div class="shadow" id="shadow">
                     <div id="shadowUp"><div></div></div>
                     <div id="shadowL"><div></div></div>
                     <div id="shadowR"><div></div></div>
                 </div>
-                <div class="cover">
+                <div class="cover" id="cover">
                     <div id="coverL"><div></div></div>
                     <div id="coverR"><div></div></div>
                     <div id="coverUp"><div></div></div>
@@ -226,8 +231,8 @@
 
         <section class="s2">
             <div id="ctrl">
-                <div class="row1"><i class="fas fa-caret-up"></i></div>
-                <div class="row2"><i class="fas fa-caret-down"></i></div>
+                <div class="row1" id="up"><i class="fas fa-caret-up"></i></div>
+                <div class="row2" id="down"><i class="fas fa-caret-down"></i></div>
             </div>
         </section>
     </div>
@@ -237,6 +242,65 @@
         <i class="fas fa-caret-left"></i>
         <i class="fas fa-caret-right"></i>
     -->
+    
+    <script type="text/javascript">
+        const up = document.getElementById("up");
+        const down = document.getElementById("down");
+        let rot = 0;
+
+        //up key
+        // if(rot===0){rot= -90;}
+        // if(rot===90){rot= -90;}
+        // if(rot===180){rot= 270;}
+        // if(rot===270){rot= 270;}
+        // if(rot=== 360){rot= 270;}
+        // if(rot=== -90){rot= -90;}
+        // if(rot=== -180){rot= -90;}
+        // if(rot=== -270){rot= -90;}
+        // if(rot=== -360){rot= -90;}
+        //down key
+        // if(rot===0){rot= 90;}
+        // if(rot===90){rot= 90;}
+        // if(rot===180){rot= 90;}
+        // if(rot===270){rot= 90;}
+        // if(rot=== 360){rot= 90;}
+        // if(rot=== -90){rot= 90;}
+        // if(rot=== -180){rot= -270;}
+        // if(rot=== -270){rot= -270;}
+        // if(rot=== -360){rot= -270;}
+        //left key
+        // if(rot===0){rot= -180;}
+        // if(rot===90){rot= 180;}
+        // if(rot===180){rot= 180;}
+        // if(rot===270){rot= 180;}
+        // if(rot=== 360){rot= 180;}
+        // if(rot=== -90){rot= -180;}
+        // if(rot=== -180){rot= -180;}
+        // if(rot=== -270){rot= -180;}
+        // if(rot=== -360){rot= -180;}
+        //right key
+        // if(rot===0){rot= 0;}
+        // if(rot===90){rot= 0;}
+        // if(rot===180){rot= 0;}
+        // if(rot===270){rot= 360;}
+        // if(rot=== 360){rot= 360;}
+        // if(rot=== -90){rot= 0;}
+        // if(rot=== -180){rot= 0;}
+        // if(rot=== -270){rot= -360;}
+        // if(rot=== -360){rot= -360;}
+        up.onclick = function(){
+            rot = rot - 90;
+            document.getElementById('shadow').style.transform = `rotate(${rot}deg)`;
+            document.getElementById('cover').style.transform = `rotate(${rot}deg)`;
+            console.log(rot);
+        }
+        down.onclick = function(){
+            rot = rot + 90;
+            document.getElementById('shadow').style.transform = `rotate(${rot}deg)`;
+            document.getElementById('cover').style.transform = `rotate(${rot}deg)`;
+            console.log(rot);
+        }
+    </script>
     <script src="https://kit.fontawesome.com/e4704dcbbd.js" crossorigin="anonymous"></script>
 </body>
 </html>
